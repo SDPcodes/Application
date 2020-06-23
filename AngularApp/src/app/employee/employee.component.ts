@@ -64,6 +64,7 @@ export class EmployeeComponent implements OnInit {
   onDelete(_id: string, form: NgForm){
     if (confirm('Are you sure to delete this record ?') == true){
       this.employeeService.deleteEmployee(_id).subscribe((res)=>{
+        M.toast({html: 'Check', classes:'rounded'});
         this.refreshEmployeeList();
         this.resetForm(form);
         M.toast({html: 'Deleted Successfully', classes:'rounded'});
