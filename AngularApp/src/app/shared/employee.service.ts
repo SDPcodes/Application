@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {Observable,of, from } from 'rxjs';
 import {map} from 'rxjs/operators';
-import 'rxjs/add/operator/toPromise';
+// import {toPromise} from 'rxjs/operators';
+// import 'rxjs/add/operator/toPromise';
 
 import { Employee } from './employee.model';
 
@@ -18,5 +19,17 @@ export class EmployeeService {
 
   postEmployee(emp : Employee){
     return this.http.post(this.baseURL, emp);
+  }
+
+  getEmployeeList(){
+    return this.http.get(this.baseURL);
+  }
+
+  putEmployee(emp: Employee){
+    return this.http.put(this.baseURL + '/${emp._id}', emp);
+  }
+
+  deleteEmployee(_id: string){
+    return this.http.delete('this.baseURL/${_id}');
   }
 }
