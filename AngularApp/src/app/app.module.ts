@@ -17,6 +17,7 @@ import { EmployeeComponent } from './employee/employee.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule
+  
   ],
   providers: [],
   bootstrap: [AppComponent]
